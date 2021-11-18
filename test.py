@@ -45,6 +45,6 @@ sentence = st.text_input('Input sentence here: ')
 #    response = str(list(generateSimilarities(sentence,5).to_records(index=False)))
 #    st.write(response)
 
-#sentence = "Test cat"
-#st.write(str(list(generateSimilarities(sentence,5).to_records(index=False))))
+sent = "Test cat"
+st.write(str(list(generateSimilarities(sent,5).to_records(index=False))))
 st.write("ok")
