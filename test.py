@@ -34,14 +34,14 @@ if sentence:
     st.write("Moo")
 
 
-urllib.request.urlretrieve("https://www.dropbox.com/s/12t9fbnp6skcjun/embeddings.pickle?dl=1", "embeddings.pickle") #too big to upload to Github
+#urllib.request.urlretrieve("https://www.dropbox.com/s/12t9fbnp6skcjun/embeddings.pickle?dl=1", "embeddings.pickle") #too big to upload to Github
     
-with open('embeddings.pickle', 'rb') as fp:
-    embeddings = pickle.load(fp)
-with open('data.pickle','rb') as fp:
-    d = pickle.load(fp)
-with open('versedict (1).pickle','rb') as fp:
-    versedict = pickle.load(fp)
+#with open('embeddings.pickle', 'rb') as fp:
+##    embeddings = pickle.load(fp)
+#with open('data.pickle','rb') as fp:
+#    d = pickle.load(fp)
+#with open('versedict (1).pickle','rb') as fp:
+#    versedict = pickle.load(fp)
     
 
 #if sentence:
