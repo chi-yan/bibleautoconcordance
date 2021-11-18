@@ -1,5 +1,6 @@
 import tensorflow_hub as hub
 import streamlit as st
+st.set_page_config(layout="wide")
 import urllib.request
 import pickle
 import numpy as np
