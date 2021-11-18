@@ -25,7 +25,7 @@ embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
 #embeddings = embed(["Hello World", "Cats and dogs"])
 
 #st.write(embeddings)
-urllib.request.urlretrieve("https://www.dropbox.com/s/12t9fbnp6skcjun/embeddings.pickle?dl=1", "embeddings.pickle")
+urllib.request.urlretrieve("https://www.dropbox.com/s/12t9fbnp6skcjun/embeddings.pickle?dl=1", "embeddings.pickle") #too big to upload to Github
     
 with open('embeddings.pickle', 'rb') as fp:
     embeddings = pickle.load(fp)
