@@ -34,15 +34,8 @@ def load_embeddings():
         embeddings = pickle.load(fp)
     return embeddings
 
-#embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
 embed = load_hub()
 
-
-
-#urllib.request.urlretrieve("https://www.dropbox.com/s/12t9fbnp6skcjun/embeddings.pickle?dl=1", "embeddings.pickle") #too big to upload to Github
-    
-#with open('embeddings.pickle', 'rb') as fp:
-#    embeddings = pickle.load(fp)
 embeddings = load_embeddings()
 with open('data.pickle','rb') as fp:
     d = pickle.load(fp)
