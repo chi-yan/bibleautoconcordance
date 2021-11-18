@@ -18,8 +18,7 @@ def generateSimilarities(text, numberOfItems):
   similarities[0] = -0.1
   for i in range(len(embeddings)):
     data.append([versedict[i],d[versedict[i]],similarities[i]])
-  return(pd.DataFrame (data, columns = ['Verse', 'Text', 'Similarity']).sort_values(by=['Similarity'], ascending=Fa
-lse).head(numberOfItems))
+  return(pd.DataFrame (data, columns = ['Verse', 'Text', 'Similarity']).sort_values(by=['Similarity'], ascending=False).head(numberOfItems))
 
 st.write("hello world")
 embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
