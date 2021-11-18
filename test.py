@@ -31,7 +31,8 @@ st.markdown("""<h1>Bible Auto-Concordance Web App</h1> <p>Enter a sentence, phra
 sentence = st.text_input('Input sentence here: ')
 
 if sentence:
-    st.write(sentence)
+    response = str(list(generateSimilarities(sent,5).to_records(index=False)))
+    st.write(response)
 
 
 urllib.request.urlretrieve("https://www.dropbox.com/s/12t9fbnp6skcjun/embeddings.pickle?dl=1", "embeddings.pickle") #too big to upload to Github
