@@ -35,5 +35,5 @@ with open('versedict (1).pickle','rb') as fp:
     versedict = pickle.load(fp)
     
 sentence="world created"
-st.write(str(list(generateSimilarities(sentence,5).to_records(index=False))))
+#st.write(str(list(generateSimilarities(sentence,5).to_records(index=False))))
 st.write("ok")
