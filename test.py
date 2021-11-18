@@ -42,11 +42,11 @@ st.markdown("""<h1>Bible Auto-Concordance Web App</h1> <p>Enter a sentence, phra
 sentence = st.text_input('Input sentence here: ')
 
 if sentence:
-    st.write(sentence)
+    st.write("Moo")
 #if sentence:
 #    response = str(list(generateSimilarities(sentence,5).to_records(index=False)))
 #    st.write(response)
 
-sent = "Test cat"
-st.write(str(list(generateSimilarities(sent,5).to_records(index=False))))
-st.write("ok")
+#sent = "Test cat"
+#st.write(str(list(generateSimilarities(sent,5).to_records(index=False))))
+#st.write("ok")
