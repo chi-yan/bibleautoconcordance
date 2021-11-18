@@ -38,10 +38,10 @@ if sentence:
     
 #with open('embeddings.pickle', 'rb') as fp:
 ##    embeddings = pickle.load(fp)
-#with open('data.pickle','rb') as fp:
-#    d = pickle.load(fp)
-#with open('versedict (1).pickle','rb') as fp:
-#    versedict = pickle.load(fp)
+with open('data.pickle','rb') as fp:
+    d = pickle.load(fp)
+with open('versedict (1).pickle','rb') as fp:
+    versedict = pickle.load(fp)
     
 
 #if sentence:
