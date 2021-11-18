@@ -58,7 +58,8 @@ if sentence:
     response = generateSimilarities(sentence,5).to_records(index=False)
     st.write(str(list(response)))
     st.write(response)
-    AgGrid(response)
+    df = pd.DataFrame(response, columns=['Verse','Text','Similarity'])
+    AgGrid(df)
     
 #if sentence:
 #    response = str(list(generateSimilarities(sentence,5).to_records(index=False)))
