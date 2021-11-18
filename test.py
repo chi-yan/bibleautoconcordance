@@ -9,7 +9,8 @@ import pandas as pd
 import string
 
 def cosine_similarities(A, B): #A is the big matrix containing all embeddings, B is the sentence
-    return np.divide(np.dot(A,B),np.apply_along_axis(np.linalg.norm, 1, A)*np.linalg.norm(B))[:,0]
+#    return np.divide(np.dot(A,B),np.apply_along_axis(np.linalg.norm, 1, A)*np.linalg.norm(B))[:,0]
+    return np.dot(A,B).flatten()
     
 def generateSimilarities(text, numberOfItems):
   embedded_text = embed([text])
