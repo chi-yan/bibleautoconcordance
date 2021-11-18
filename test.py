@@ -41,6 +41,8 @@ with open('versedict (1).pickle','rb') as fp:
 st.markdown("""<h1>Bible Auto-Concordance Web App</h1> <p>Enter a sentence, phrase or word you want to look for in the KJV Bible.</p><p>Built with NLP, Google Cloud, Flask, Streamlit, AgGrid and the Universal Sentence Encoder.</p><p>Works best on a desktop, if you are trying this from a mobile device, try ending the sentence with a space or a dot.</p>""", unsafe_allow_html=True)
 sentence = st.text_input('Input sentence here: ')
 
+if sentence:
+    st.write(sentence)
 #if sentence:
 #    response = str(list(generateSimilarities(sentence,5).to_records(index=False)))
 #    st.write(response)
