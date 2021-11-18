@@ -24,8 +24,18 @@ def generateSimilarities(text, numberOfItems):
   st.write('debug 3')
   return(pd.DataFrame (data, columns = ['Verse', 'Text', 'Similarity']).sort_values(by=['Similarity'], ascending=False).head(numberOfItems))
 
+@st.cache
+def load_hub():
+    return hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
 
-embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
+@st.cache
+def load_embeddings():
+    with open('embeddings.pickle', 'rb') as fp:
+    embeddings = pickle.load(fp)
+    return embeddings
+
+#embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
+embed = load_hub()
 
 st.markdown("""<h1>Bible Auto-Concordance Web App</h1> <p>Enter a sentence, phrase or word you want to look for in the KJV Bible.</p><p>Built with NLP, Google Cloud, Flask, Streamlit, AgGrid and the Universal Sentence Encoder.</p><p>Works best on a desktop, if you are trying this from a mobile device, try ending the sentence with a space or a dot.</p>""", unsafe_allow_html=True)
 sentence = st.text_input('Input sentence here: ')
@@ -37,8 +47,9 @@ if sentence:
 
 urllib.request.urlretrieve("https://www.dropbox.com/s/12t9fbnp6skcjun/embeddings.pickle?dl=1", "embeddings.pickle") #too big to upload to Github
     
-with open('embeddings.pickle', 'rb') as fp:
-    embeddings = pickle.load(fp)
+#with open('embeddings.pickle', 'rb') as fp:
+#    embeddings = pickle.load(fp)
+embeddings = load_embeddings()
 with open('data.pickle','rb') as fp:
     d = pickle.load(fp)
 with open('versedict (1).pickle','rb') as fp:
