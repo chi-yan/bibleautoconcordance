@@ -57,6 +57,7 @@ sentence = st.text_input('Input sentence here: ')
 if sentence:
     response = generateSimilarities(sentence,5).to_records(index=False)
     st.write(str(list(response)))
+    st.write(response)
     AgGrid(response)
     
 #if sentence:
