@@ -25,13 +25,13 @@ def generateSimilarities(text, numberOfItems):
   return(pd.DataFrame (data, columns = ['Verse', 'Text', 'Similarity']).sort_values(by=['Similarity'], ascending=False).head(numberOfItems))
 
 
-embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
+#embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
 
 st.markdown("""<h1>Bible Auto-Concordance Web App</h1> <p>Enter a sentence, phrase or word you want to look for in the KJV Bible.</p><p>Built with NLP, Google Cloud, Flask, Streamlit, AgGrid and the Universal Sentence Encoder.</p><p>Works best on a desktop, if you are trying this from a mobile device, try ending the sentence with a space or a dot.</p>""", unsafe_allow_html=True)
 sentence = st.text_input('Input sentence here: ')
 
 if sentence:
-    st.write("Moo")
+    st.write(sentence)
 
 
 #urllib.request.urlretrieve("https://www.dropbox.com/s/12t9fbnp6skcjun/embeddings.pickle?dl=1", "embeddings.pickle") #too big to upload to Github
