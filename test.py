@@ -7,6 +7,7 @@ from collections import OrderedDict
 from operator import itemgetter
 import pandas as pd
 import string
+from st_aggrid import AgGrid
 
 def cosine_similarities(A, B): #A is the big matrix containing all embeddings, B is the sentence
 #    return np.divide(np.dot(A,B),np.apply_along_axis(np.linalg.norm, 1, A)*np.linalg.norm(B))[:,0]
@@ -54,9 +55,10 @@ st.markdown("""<h1>Bible Auto-Concordance Web App</h1> <p>Enter a sentence, phra
 sentence = st.text_input('Input sentence here: ')
 
 if sentence:
-    response = str(list(generateSimilarities(sentence,5).to_records(index=False)))
-    st.write(response)
-
+    response = generateSimilarities(sentence,5).to_records(index=False)
+    st.write(str(list(response)))
+    AgGrid(response)
+    
 #if sentence:
 #    response = str(list(generateSimilarities(sentence,5).to_records(index=False)))
 #    st.write(response)
