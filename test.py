@@ -1,6 +1,7 @@
 import tensorflow_hub as hub
 import streamlit as st
 import urllib.request
+import pickle
 
 st.write("hello world")
 embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
