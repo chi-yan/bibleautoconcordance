@@ -13,11 +13,14 @@ def cosine_similarities(A, B): #A is the big matrix containing all embeddings, B
     
 def generateSimilarities(text, numberOfItems):
   embedded_text = embed([text])
+  st.write('debug 1')
   similarities = cosine_similarities(embeddings.numpy(), embedded_text.numpy().T)
+  st.write('debug 2')
   data = []
   similarities[0] = -0.1
   for i in range(len(embeddings)):
     data.append([versedict[i],d[versedict[i]],similarities[i]])
+  st.write('debug 3')
   return(pd.DataFrame (data, columns = ['Verse', 'Text', 'Similarity']).sort_values(by=['Similarity'], ascending=False).head(numberOfItems))
 
 st.write("hello world")
