@@ -12,3 +12,5 @@ with open('data.pickle','rb') as fp:
     d = pickle.load(fp)
 with open('versedict (1).pickle','rb') as fp:
     versedict = pickle.load(fp)
+
+st.write("ok")
